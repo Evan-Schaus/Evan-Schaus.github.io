@@ -1,0 +1,115 @@
+#main {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Headings */
+h1 {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+
+h4 {
+  margin: 0;
+  color: #555;
+}
+
+h2,
+h3 {
+  margin-top: 30px;
+}
+
+/* Profile Image */
+.profile-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin: 20px 0;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+.contact p {
+  margin: 5px 0;
+}
+
+.contact a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Links */
+.links {
+  margin: 20px 0;
+}
+
+.links a {
+  margin: 0 10px;
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Portfolio List */
+.portfolio-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px;
+}
+
+.portfolio-list li {
+  margin: 10px 0;
+}
+
+.portfolio-list a {
+  color: #222;
+  text-decoration: none;
+}
+
+.portfolio-list a:hover {
+  color: #0077cc;
+}
+
+/* Portfolio Images */
+.portfolio-images {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.portfolio-images img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+}
+
+.portfolio-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Map */
+iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 10px;
+  margin-top: 20px;
+}

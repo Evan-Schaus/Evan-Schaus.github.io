@@ -29,8 +29,8 @@ function addNav() {
     nav.innerHTML = `<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                       <a href="javascript:void(0)" onclick="window.routeTo('home')">Home</a>
                       <a href="javascript:void(0)" onclick="window.routeTo('projects')">Projects</a>
-                      <a href="javascript:void(0)" onclick="window.routeTo('experiments')">Experiments</a>
-                      <a href="javascript:void(0)" onclick="window.routeTo('certs')">Certifications</a>`;
+                      <a href="javascript:void(0)" onclick="window.routeTo('about')">About</a>
+                      <a href="javascript:void(0)" onclick="window.routeTo('contact')">Contact</a>`;
     document.body.appendChild(nav);
 
     var openButton = document.createElement('span');
