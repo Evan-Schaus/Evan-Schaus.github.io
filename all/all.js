@@ -12,6 +12,18 @@ function addHeaders() {
     head.appendChild(link2);
 }
 
+function addFonts() {
+    var head = document.getElementsByTagName('head')[0];
+    var link = document.createElement('link');
+    link.href = `
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    `;
+    link.rel = 'stylesheet';
+    head.appendChild(link);
+}
+
 function addNav() {
 
     var script = document.createElement('script');
@@ -53,5 +65,6 @@ window.routeTo =  function(route) {
 function onload() {
     addHeaders();
     addNav();
+    addFonts();
 }
 onload();
