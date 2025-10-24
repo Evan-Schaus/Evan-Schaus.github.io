@@ -101,7 +101,7 @@
       function runCaps() {
         const lines = document
           .getElementById("capsInput")
-          .value.trim()
+          .value.substring(1).trim()
           .split("\n")
           .filter((l) => l.trim() !== ""); // ignore empty lines
         document.getElementById("capsOutput").textContent =
@@ -122,7 +122,7 @@
       function runDeath() {
         const lines = document
           .getElementById("deathInput")
-          .value.trim()
+          .value.substring(1).trim()
           .split("\n")
           .filter((l) => l.trim() !== ""); // ignore empty lines
         const cases = lines.map((line) => line.trim().split(/\s+/).map(Number));
@@ -147,7 +147,7 @@
       function runLightsaber() {
         const lines = document
           .getElementById("lightsaberInput")
-          .value.trim()
+          .value.substring(1).trim()
           .split("\n")
           .filter((l) => l.trim() !== "");
         const sets = lines.map((line) => {
