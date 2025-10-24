@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Baldwin Wallace 2014 – Star Wars Problems</title>
+    <style>
+      body {
+        background: #0b0b0b;
+        color: #00ffcc;
+        font-family: "Consolas", monospace;
+        padding: 20px;
+      }
+      h2 {
+        color: #66ff99;
+        border-bottom: 1px solid #066;
+        margin-top: 30px;
+      }
+      textarea,
+      input {
+        background: #111;
+        color: #0f0;
+        border: 1px solid #066;
+        width: 100%;
+        padding: 6px;
+        font-family: inherit;
+        resize: vertical;
+      }
+      button {
+        background: #033;
+        color: #0f0;
+        border: 1px solid #066;
+        padding: 6px 10px;
+        cursor: pointer;
+        margin-top: 5px;
+      }
+      button:hover {
+        background: #055;
+      }
+      pre {
+        background: #111;
+        color: #0f0;
+        padding: 10px;
+        border: 1px solid #066;
+        min-height: 40px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Baldwin Wallace 2014 Programming Contest</h1>
+
+    <!-- Problem 1 -->
+    <h2>1. These Are Not The CAPS You're Looking For</h2>
+    <textarea
+      id="capsInput"
+      rows="3"
+      placeholder="Enter lines separated by newline"
+    ></textarea>
+    <button onclick="runCaps()">Encrypt</button>
+    <pre id="capsOutput"></pre>
+
+    <!-- Problem 2 -->
+    <h2>2. Shoot the Death Star!</h2>
+    <textarea
+      id="deathInput"
+      rows="5"
+      placeholder="Enter lines like: x y z"
+    ></textarea>
+    <button onclick="runDeath()">Test Shots</button>
+    <pre id="deathOutput"></pre>
+
+    <!-- Problem 3 -->
+    <h2>3. Build a Lightsaber</h2>
+    <textarea
+      id="lightsaberInput"
+      rows="5"
+      placeholder="Example:
+3 7 5 9
+4 585 200 2405 50"
+    ></textarea>
+    <button onclick="runLightsaber()">Find GCD</button>
+    <pre id="lightsaberOutput"></pre>
+
+    <script>
+      // ---------- Problem 1 ----------
+      function encryptRebelText(lines) {
+        const results = [];
+        for (let line of lines) {
+          let count = 0,
+            out = "";
+          for (let c of line) {
+            if (/[a-z]/.test(c)) {
+              out += count % 2 === 0 ? c.toUpperCase() : c;
+              count++;
+            } else out += c;
+          }
+          results.push(out);
+        }
+        return results;
+      }
+      function runCaps() {
+        const lines = document
+          .getElementById("capsInput")
+          .value.trim()
+          .split("\n")
+          .filter((l) => l.trim() !== ""); // ignore empty lines
+        document.getElementById("capsOutput").textContent =
+          encryptRebelText(lines).join("\n");
+      }
+
+      // ---------- Problem 2 ----------
+      function deathStarTests(cases) {
+        const results = [];
+        for (let [x, y, z] of cases) {
+          const val = (x * 3 - y) / z;
+          if (val > 100 && val < 300)
+            results.push("You have hit the Death Star!");
+          else results.push("You have missed the Death Star.");
+        }
+        return results;
+      }
+      function runDeath() {
+        const lines = document
+          .getElementById("deathInput")
+          .value.trim()
+          .split("\n")
+          .filter((l) => l.trim() !== ""); // ignore empty lines
+        const cases = lines.map((line) => line.trim().split(/\s+/).map(Number));
+        document.getElementById("deathOutput").textContent =
+          deathStarTests(cases).join("\n");
+      }
+
+      // ---------- Problem 3 ----------
+      function gcd(a, b) {
+        return b === 0 ? Math.abs(a) : gcd(b, a % b);
+      }
+      function lightsaberPower(sets) {
+        const results = [];
+        for (let arr of sets) {
+          if (arr.length === 0) continue;
+          let g = Math.abs(arr[0]);
+          for (let i = 1; i < arr.length; i++) g = gcd(g, arr[i]);
+          results.push(g);
+        }
+        return results;
+      }
+      function runLightsaber() {
+        const lines = document
+          .getElementById("lightsaberInput")
+          .value.trim()
+          .split("\n")
+          .filter((l) => l.trim() !== "");
+        const sets = lines.map((line) => {
+          const parts = line.trim().split(/\s+/).map(Number);
+          return parts.slice(1); // skip first number (count)
+        });
+        document.getElementById("lightsaberOutput").textContent =
+          lightsaberPower(sets).join("\n");
+      }
+    </script>
+  </body>
+</html>

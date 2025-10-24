@@ -42,7 +42,8 @@ function addNav() {
                       <a href="javascript:void(0)" onclick="window.routeTo('home')">Home</a>
                       <a href="javascript:void(0)" onclick="window.routeTo('projects')">Projects</a>
                       <a href="javascript:void(0)" onclick="window.routeTo('about')">About</a>
-                      <a href="javascript:void(0)" onclick="window.routeTo('contact')">Contact</a>`;
+                      <a href="javascript:void(0)" onclick="window.routeTo('contact')">Contact</a>
+                      <a href="javascript:void(0)" onclick="window.routeTo('programs')">Programs</a>`;
     document.body.appendChild(nav);
 
     var openButton = document.createElement('span');
