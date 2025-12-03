@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Favorites</title>
+    <link rel="stylesheet" href="favorites.css">
+</head>
+<body>
+    <h1>My Favorites</h1>
+    
+    <main>
+
+        <!-- Audio Card 2 -->
+        <div class="card">
+            <img src="./goalkeeper.png">
+            <h2>Goalkeeper</h2>
+            <button onclick="window.open('https://youtu.be/EJ1GfOp_8Aw?si=rlc1V7ovO30YtYAe', '_blank')">View</button>
+            <p>I played soccer from 4 years old to 16 years old. Soccer was my life for a long time.</p>
+        </div>
+
+        <!-- Video Card 1 -->
+        <div class="card">
+            <img src="./entombed.png">
+            <h2>Deftones - Entombed</h2>
+            <button onclick="window.open('https://youtu.be/gEXbHKAuHSg?si=J0x3kbdQKKZcPbcs', '_blank')">View</button>
+            <p>Deftones is my favorite band. This is one of my favorite songs. My top listening band for 2025.</p>
+        </div>
+
+        <!-- Video Card 2 -->
+        <div class="card">
+            <img src="./LLM.png">
+            <h2>LLM - Deep Learning</h2>
+            <button onclick="window.open('https://youtu.be/aircAruvnKk?si=L9YCAqnu5aAsVnam', '_blank')">View</button>
+            <p>I love learning about neural networks and deep learning. LLMs peak my interest.</p>
+        </div>
+
+        <div class="card">
+            <img src="./music.png">
+            <h2>Switch Music</h2>
+            <button onclick="switchSong()">switch</button>
+            <p>Click the button to switch the song</p>
+        </div>
+
+        <!-- Image placeholders -->
+        <!-- <div class="card">
+            <h3><a href="#" target="_blank">Image Placeholder 1</a></h3>
+            <p>This will be replaced with an awesome image soon.</p>
+        </div>
+
+        <div class="card">
+            <h3><a href="#" target="_blank">Image Placeholder 2</a></h3>
+            <p>Placeholder for another image to showcase my favorites.</p>
+        </div>
+
+        <div class="card">
+            <h3><a href="#" target="_blank">Image Placeholder 3</a></h3>
+            <p>Placeholder for a third image. Coming soon!</p>
+        </div> -->
+
+    </main>
+
+    <script>
+        const audios = {
+            'music.mp3': 'music.mp3',
+            'music2.mp3': 'music2.mp3'
+        }
+        let audioKey = 'music.mp3';
+        let audio = new Audio(audios[audioKey]);
+        
+        function switchSong() {
+            if (audioKey === 'music.mp3') {
+                audioKey = 'music2.mp3';
+            } else {
+                audioKey = 'music.mp3';
+            }
+            audio.pause();
+            audio = new Audio(audios[audioKey]);
+            audio.play();
+            console.log(audioKey);
+        }
+    </script>
+
+    <script src="../../all/all.js"></script>
+</body>
+</html>

@@ -1,3 +1,12 @@
+:root {
+    --top-gradient: #62dafb;
+    --bottom-gradient: #007acc;
+    --text-subtle: #aab4d4;
+    --text-light: #e7ecff;
+    --content-width: 60%;
+}
+
+
 body {
     margin: 0;
     padding: 5vh;
